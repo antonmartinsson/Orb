@@ -8,65 +8,54 @@
 import SwiftUI
 
 public struct OrbConfiguration {
-    public let glowColor: Color
-    public let backgroundColors: [Color]
-    public let particleColor: Color
-    
-    public let showBackground: Bool
-    public let showWavyBlobs: Bool
-    public let showParticles: Bool
-    public let showGlowEffects: Bool
-    public let showShadow: Bool
-    
-    public let coreGlowIntensity: Double
-    public let speed: Double
-    
-    internal init(
-        backgroundColors: [Color],
-        glowColor: Color,
-        particleColor: Color,
-        coreGlowIntensity: Double,
-        showBackground: Bool,
-        showWavyBlobs: Bool,
-        showParticles: Bool,
-        showGlowEffects: Bool,
-        showShadow: Bool,
-        speed: Double
-    ) {
-        self.backgroundColors = backgroundColors
-        self.glowColor = glowColor
-        self.particleColor = particleColor
-        self.showBackground = showBackground
-        self.showWavyBlobs = showWavyBlobs
-        self.showParticles = showParticles
-        self.showGlowEffects = showGlowEffects
-        self.showShadow = showShadow
-        self.coreGlowIntensity = coreGlowIntensity
-        self.speed = speed
-    }
-    
-    public init(
-        backgroundColors: [Color] = [.green, .blue, .pink],
-        glowColor: Color = .white,
-        coreGlowIntensity: Double = 1.0,
-        showBackground: Bool = true,
-        showWavyBlobs: Bool = true,
-        showParticles: Bool = true,
-        showGlowEffects: Bool = true,
-        showShadow: Bool = true,
-        speed: Double = 60
-    ) {
-        self.init(
-            backgroundColors: backgroundColors,
-            glowColor: glowColor,
-            particleColor: .white,
-            coreGlowIntensity: coreGlowIntensity,
-            showBackground: showBackground,
-            showWavyBlobs: showWavyBlobs,
-            showParticles: showParticles,
-            showGlowEffects: showGlowEffects,
-            showShadow: showShadow,
-            speed: speed
-        )
-    }
+  public let glowColor: Color
+  public let backgroundColors: [Color]
+  public let particleColor: Color
+  
+  public let coreGlowIntensity: Double
+  public let speed: Double
+  
+  public init(
+    backgroundColors: [Color] = [.green, .blue, .pink],
+    glowColor: Color = .white,
+    particleColor: Color = .white,
+    coreGlowIntensity: Double = 1.0,
+    speed: Double = 60
+  ) {
+    self.backgroundColors = backgroundColors
+    self.glowColor = glowColor
+    self.particleColor = particleColor
+    self.coreGlowIntensity = coreGlowIntensity
+    self.speed = speed
+  }
+}
+
+extension EnvironmentValues {
+  @Entry var hideBackground: Bool = false
+  @Entry var hideWaves: Bool = false
+  @Entry var hideParticles: Bool = false
+  @Entry var hideGlowEffects: Bool = false
+  @Entry var hideShadow: Bool = false
+}
+
+extension View {
+  public func hideOrbBackground(_ hide: Bool = true) -> some View {
+    environment(\.hideBackground, hide)
+  }
+  
+  public func hideOrbWaves(_ hide: Bool = true) -> some View {
+    environment(\.hideWaves, hide)
+  }
+  
+  public func hideOrbParticles(_ hide: Bool = true) -> some View {
+    environment(\.hideParticles, hide)
+  }
+  
+  public func hideOrbGlowEffects(_ hide: Bool = true) -> some View {
+    environment(\.hideGlowEffects, hide)
+  }
+  
+  public func hideOrbShadow(_ hide: Bool = true) -> some View {
+    environment(\.hideShadow, hide)
+  }
 }

@@ -15,7 +15,9 @@
 
 # 🔮 The Orb - SwiftUI
 
-A beautiful, highly customizable animated orb component using SwiftUI. Create mesmerizing, interactive orbs with glowing effects, particles, and dynamic animations.
+A beautiful, highly customizable animated orb component using SwiftUI. Create mesmerizing, interactive orbs with glowing effects, particles, and dynamic animations. 
+
+Originally created by [@metasidd](https://github.com/metasidd). Modified by me to reduce reliance on GeometryReader, lower the iOS deployment target and allow for orb customization through view modifiers, instead of a parameter heavy configuration init.
 
 https://github.com/user-attachments/assets/181b5041-df59-40ed-b71b-a9f91292ce0a
 
@@ -61,7 +63,6 @@ struct ContentView: View {
 
 The `OrbView` can be customized using `OrbConfiguration`:
 
-
 ```swift
 let configuration = OrbConfiguration(
     backgroundColors: [.purple, .blue, .pink], // Custom gradient colors
@@ -95,85 +96,9 @@ OrbView(configuration: configuration)
 | `showShadow` | `Bool` | `true` | Shows/hides shadow effects |
 | `speed` | `Double` | `60` | Animation speed (higher = faster) |
 
-### Preset Configurations
-
-Explore these beautiful configurations to see what you can achieve. Copy any of the presets below to use in your own project, and feel free to customize them to match your vision.
-
-```swift
-// Mystic
-let mysticOrb = OrbConfiguration(
-    backgroundColors: [.purple, .blue, .indigo],
-    glowColor: .purple,
-    coreGlowIntensity: 1.2
-)
-
-// Nature
-let natureOrb = OrbConfiguration(
-    backgroundColors: [.green, .mint, .teal],
-    glowColor: .green,
-    speed: 45
-)
-
-// Sunset
-let sunsetOrb = OrbConfiguration(
-    backgroundColors: [.orange, .red, .pink],
-    glowColor: .orange,
-    coreGlowIntensity: 0.8
-)
-
-// Ocean
-let oceanOrb = OrbConfiguration(
-    backgroundColors: [.blue, .cyan, .teal],
-    glowColor: .cyan,
-    speed: 75
-)
-
-// Minimal
-let minimalOrb = OrbConfiguration(
-    backgroundColors: [.gray, .white],
-    glowColor: .white,
-    showWavyBlobs: false,
-    showParticles: false,
-    speed: 30
-)
-
-// Cosmic
-let cosmicOrb = OrbConfiguration(
-    backgroundColors: [.purple, .pink, .blue],
-    glowColor: .white,
-    coreGlowIntensity: 1.5,
-    speed: 90
-)
-
-// Fire
-let fireOrb = OrbConfiguration(
-    backgroundColors: [.red, .orange, .yellow],
-    glowColor: .orange,
-    coreGlowIntensity: 1.3,
-    speed: 80
-)
-
-// Arctic
-let arcticOrb = OrbConfiguration(
-    backgroundColors: [.cyan, .white, .blue],
-    glowColor: .white,
-    coreGlowIntensity: 0.75,
-    showParticles: true,
-    speed: 40
-)
-
-// Shadow
-let shadowOrb = OrbConfiguration(
-    backgroundColors: [.black, .gray],
-    glowColor: .gray,
-    coreGlowIntensity: 0.7,
-    showParticles: false
-)
-```
-
 ## Requirements
 
-- iOS 17.0+
+- iOS 16.0+
 - macOS 14.0+
 - tvOS 17.0+
 - watchOS 10.0+
