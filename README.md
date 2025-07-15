@@ -96,23 +96,23 @@ OrbView(configuration: configuration)
 You can use the following view modifiers to conditionally hide or show certain elements of the orb. By default, they all are set to show.
 
 ```swift
-.hideBackground(_ hide: Bool)
+.hideOrbBackground(_ hide: Bool)
 ```
 
 ```swift
-.hideWaves(_ hide: Bool)
+.hideOrbWaves(_ hide: Bool)
 ```
 
 ```swift
-.hideParticles(_ hide: Bool)
+.hideOrbParticles(_ hide: Bool)
 ```
 
 ```swift
-.hideGlowEffects(_ hide: Bool)
+.hideOrbGlowEffects(_ hide: Bool)
 ```
 
 ```swift
-.hideShadow(_ hide: Bool)
+.hideOrbShadow(_ hide: Bool)
 ```
 
 ## Requirements
