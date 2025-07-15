@@ -219,18 +219,40 @@ public struct OrbView: View {
   
   private var realisticInnerGlows: some View {
     ZStack {
-      // Outer stroke with heavy blur
+      // Outer top stroke
+      Circle()
+        .stroke(orbOutlineColor, lineWidth: 8)
+        .blur(radius: 32)
+        .blendMode(.plusLighter)
+        .rotationEffect(.degrees(180))
+      
+      // Middle top stroke
+      Circle()
+        .stroke(orbOutlineColor, lineWidth: 4)
+        .blur(radius: 12)
+        .blendMode(.plusLighter)
+        .rotationEffect(.degrees(180))
+      
+      // Inner top stroke
+      Circle()
+        .stroke(orbOutlineColor, lineWidth: 1)
+        .blur(radius: 4)
+        .blendMode(.plusLighter)
+        .rotationEffect(.degrees(180))
+      
+      // Outer bottom stroke
       Circle()
         .stroke(orbOutlineColor, lineWidth: 8)
         .blur(radius: 32)
         .blendMode(.plusLighter)
       
-      // Inner stroke with light blur
+      // Middle bottom stroke
       Circle()
         .stroke(orbOutlineColor, lineWidth: 4)
         .blur(radius: 12)
         .blendMode(.plusLighter)
       
+      // Inner bottom stroke
       Circle()
         .stroke(orbOutlineColor, lineWidth: 1)
         .blur(radius: 4)
@@ -246,10 +268,11 @@ public struct OrbView: View {
     glowColor: .white.opacity(0.1),
     particleColor: .white.opacity(0.2),
     coreGlowIntensity: 1.5,
-    speed: 20
+    speed: 60
   )
   ZStack {
     OrbView(configuration: cosmicOrb)
+      .hideOrbParticles()
       .aspectRatio(1, contentMode: .fit)
       .padding(36)
   }
