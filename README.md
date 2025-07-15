@@ -65,16 +65,11 @@ The `OrbView` can be customized using `OrbConfiguration`:
 
 ```swift
 let configuration = OrbConfiguration(
-    backgroundColors: [.purple, .blue, .pink], // Custom gradient colors
-    glowColor: .white,                         // Glow effect color
-    particleColor: .white,                     // Particle effect color
-    coreGlowIntensity: 1.2,                   // Intensity of the core glow
-    showBackground: true,                      // Toggle background visibility
-    showWavyBlobs: true,                      // Toggle organic movement elements
-    showParticles: true,                      // Toggle particle effects
-    showGlowEffects: true,                    // Toggle glow effects
-    showShadow: true,                         // Toggle shadow effects
-    speed: 60                                 // Animation speed
+    backgroundColors: [.purple, .blue, .pink],  // Custom gradient colors
+    glowColor: .white,                          // Glow effect color
+    particleColor: .white,                      // Particle effect color
+    coreGlowIntensity: 1.2,                     // Intensity of the core glow
+    speed: 60                                   // Animation speed
 )
 
 OrbView(configuration: configuration)
@@ -95,6 +90,16 @@ OrbView(configuration: configuration)
 | `showGlowEffects` | `Bool` | `true` | Shows/hides glow effects |
 | `showShadow` | `Bool` | `true` | Shows/hides shadow effects |
 | `speed` | `Double` | `60` | Animation speed (higher = faster) |
+
+### View modifiers
+
+You can use the following view modifiers to conditionally hide or show certain elements of the orb. By default, they all are set to show.
+
+`.hideBackground(_ hide: Bool)`
+`.hideWaves(_ hide: Bool)`
+`.hideParticles(_ hide: Bool)`
+`.hideGlowEffects(_ hide: Bool)`
+`.hideShadow(_ hide: Bool)`
 
 ## Requirements
 
