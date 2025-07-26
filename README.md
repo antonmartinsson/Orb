@@ -84,11 +84,6 @@ OrbView(configuration: configuration)
 | `glowColor` | `Color` | `.white` | Color of the glow effects |
 | `particleColor` | `Color` | `.white` | Color of the particle effects |
 | `coreGlowIntensity` | `Double` | `1.0` | Intensity of the core glow effect (higher = brighter) |
-| `showBackground` | `Bool` | `true` | Shows/hides the gradient background |
-| `showWavyBlobs` | `Bool` | `true` | Shows/hides organic movement elements |
-| `showParticles` | `Bool` | `true` | Shows/hides particle effects |
-| `showGlowEffects` | `Bool` | `true` | Shows/hides glow effects |
-| `showShadow` | `Bool` | `true` | Shows/hides shadow effects |
 | `speed` | `Double` | `60` | Animation speed (higher = faster) |
 
 ### View modifiers
